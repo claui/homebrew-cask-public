@@ -1,6 +1,6 @@
 cask 'rambox-pro' do
-  version '1.1.6'
-  sha256 '3551e2426cfe68bc202f7a7ca14c14596456e2c96f40139886f0157a45de865c'
+  version '1.2.2'
+  sha256 'e038289c28eaf974c2c201e4a5832f66e7917ad97ef1a50e2bd92ae82cec8ad5'
 
   # github.com/ramboxapp/download was verified as official when first introduced to the cask
   url "https://github.com/ramboxapp/download/releases/download/v#{version}/RamboxPro-#{version}-mac.zip"
