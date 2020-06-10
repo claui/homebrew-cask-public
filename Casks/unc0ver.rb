@@ -1,9 +1,9 @@
 cask 'unc0ver' do
-  version '5.0.1'
-  sha256 'dd04a3e28a1eb81a6f3c586f1236feb0377f76e331e94554ea1a89330fa4b06b'
+  version '5.2.0'
+  sha256 'bb2d455c130d07b7c81bd548a66eb3ceecea047c14ca8021040716651b4d3234'
 
   # github.com was verified as official when first introduced to the cask
-  url "https://github.com/pwn20wndstuff/Undecimus/releases/download/v#{version}/unc0ver-v#{version}.ipa"
+  url "https://github.com/pwn20wndstuff/Undecimus/releases/download/v#{version}/unc0ver_#{version}.ipa"
   appcast 'https://github.com/pwn20wndstuff/Undecimus/releases.atom'
   name 'unc0ver'
   homepage 'https://unc0ver.dev/'
