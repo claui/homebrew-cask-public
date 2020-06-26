@@ -6,5 +6,18 @@ cask 'patch-installer' do
   name 'Big Sur installer patch tool'
   homepage "https://parrotgeek.com/bigsur/"
 
-  binary "tool/patch_installer.sh"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/tool/patch_installer.wrapper.sh"
+  binary shimscript, target: 'patch_installer.sh'
+
+  preflight do
+    IO.write shimscript, <<~EOS
+      #!/bin/bash
+      if [ "$1" ]; then
+        DISKPATH="$(pwd)/$1"
+      fi
+      cd '#{staged_path}/tool'
+      exec './patch_installer.sh' "${DISKPATH:-}"
+    EOS
+  end
 end
